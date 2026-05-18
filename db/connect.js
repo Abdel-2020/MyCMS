@@ -8,7 +8,6 @@ const db = new sqlite.DatabaseSync(dbPath, {
   open: false
 });
 
-
 // connect to db
 function connect(){
   if(!db.isOpen){
@@ -17,7 +16,6 @@ function connect(){
     console.log('There is already a connection to the database...')
   }
 }
-
 
 module.exports = {
   db,
