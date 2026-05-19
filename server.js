@@ -12,12 +12,12 @@ const db = require('./db/connect.js');
 
 //Middleware
 app.use(express.json());
-app.use(express.static('./public'))
+app.use(express.static('./public'));
 
 //Routes
-app.use('/api/v1/blog', blogRouter)
+app.use('/api/v1/blog', blogRouter);
 
 app.listen(port, () => {
     db.connect();
-    console.log( `server listening on port ${port}... `)
-})
+    console.log( `server listening on port ${port}... `);
+});

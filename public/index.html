@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog</title>
     <link href="css/style.css" rel="stylesheet">
+    <script src="./js/htmx.min.js"></script>
   </head>
   <body>
     <h1> Hello World </h1> 
+    <button hx-get="/api/v1/blog/post">Get some blog posts</button>
   </body>
 </html>
