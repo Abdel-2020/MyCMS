@@ -23,25 +23,10 @@ const createPost = (title, body, date, author, last_updated) => {
 // Returns an array of JSON objects. Need to convert this to HTML
 // to render direclty in browser with HTMX
 const getPosts = () => {
+
   const statement = db.prepare(`SELECT * FROM blog_posts`);
   const data = statement.all();
-  const postDate = new Date(1314501600 * 1000);
-
-  const article = `
-    <article>
-      <header>
-        <h2 class="headline">${data[0].title}</h2>
-        <p class="byline">
-          <address class="author"> By <a rel="author" href="#"> ${data[0].author}</a></address>
-          on <strong>some time<strong>
-        </p>
-        <div class="article-content"> 
-          <p>${data[0].body}</p>
-        </div>
-      </header>
-    </article>
-`;
-  return article
+  return data
 };
 
 // I'm not 100% sure if this is protected from SQL Injection
