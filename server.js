@@ -12,17 +12,17 @@ nunjucks.configure('./views/', {
 });
 
 //Router
-const blogRouter = require('./api/routes/routes.js');
+const {postRouter, picRouter} = require('./api/routes/routes.js');
 
 //DB connection
 const db = require('./db/connect.js');
 
 //Middleware
-//app.use(express.json());
+app.use(express.json());
 app.use(express.static('./public'));
 
 //Routes
-app.use('/api/v1/blog', blogRouter);
+app.use('/api/v1/blog', postRouter);
 
 app.listen(port, () => {
     db.connect();

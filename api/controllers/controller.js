@@ -3,9 +3,8 @@ const posts = require ('../../services/posts.js');
 // Create Post
  const createPost = async (req,res) => {
   try {
-
-   const {title, body, date, author, last_updated} = req.body;
-   data = posts.createPost(title, body, date, author, last_updated);
+   const {title, body, author} = req.body;
+   data = posts.createPost(title, body, author);
 
    res.status(200).json({msg:'Post created successfully', data});
 
@@ -17,9 +16,7 @@ const posts = require ('../../services/posts.js');
 // Read Post(s)
 const getPost = async (req,res) => {
   try {
-
     console.log('Post(s) retrieved successfully');
-
   } catch (error) {
    res.status(500).json({msg:'Internal Server Error', error});
   };

@@ -1,5 +1,6 @@
 const express = require("express");
 const postRouter = express.Router();
+const picRouter = express.Router();
 
 const {
   createPost,
@@ -11,7 +12,7 @@ const {
 
 postRouter.route("/post").post(createPost).get(getPosts).put(updatePost).delete(deletePost);
 
-module.exports = postRouter;
+module.exports = { postRouter, picRouter };
 
 
 

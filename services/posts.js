@@ -14,9 +14,11 @@ const { db } = require ('../db/connect.js');
 // last_updated = int (Unix Timestamp)
 
 
-const createPost = (title, body, date, author, last_updated) => {
-  const statement = db.prepare(`INSERT INTO blog_posts ( title, body, date, author, last_updated) VALUES (?, ?, ?, ?, ?)`);
-  const result = statement.run(title, body, date, author, last_updated);
+const createPost = (title, body, author) => {
+  console.log('Create Post Service')
+  const statement = db.prepare(`INSERT INTO blog_posts ( title, body, author) VALUES (?, ?, ?)`);
+  const result = statement.run(title, body, author);
+  console.log(result);
   return result;
 };
 

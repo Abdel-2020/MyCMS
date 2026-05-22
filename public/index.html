@@ -10,28 +10,27 @@
   <body hx-boost="true">
     <header>
       <h1 hx-get="#" hx-target="body">Abdel</h1>
-      <p>An Application Support Analyst with <strong>over 7 years of professional IT Experience.</strong></p>
-      <p><strong>Self taught Full Stack Developer</strong> with live projects in NodeJS and Python.</p>
+      <p>An Application Support Analyst with <strong>over 7 years of professional IT Experience</strong> and a <strong>self taught developer</strong> with live projects covering <strong>NodeJS & Python, SQL & NoSQL databases, RESTful API Design & Implementation, MCP Design & Implementation.</strong></p></br>
+      <p>Still here? Want to see my Projects? Well click <strong><a hx-get="api/v1/blog/projects" hx-swap="innerHTML show:top" hx-target="main">here</a></strong> to learn more.</p><br>
       <h3>Interests:</h3>
-      <p><em>Linux & Open Source, Computer Science, Right to Repair, Self Hosting, Reading, Coffee, Travelling, Hiking, Gym & MMA, Indie Games & Game Dev</em></p>
+      <p><em>Linux & Open Source, Computer Science, Self Hosting, Local LLMs, Reading, Coffee, Travelling, Hiking, Gym & MMA, Indie Games & Game Dev</em></p></br>
       <h3>Not the biggest fan of:</h3>
-      <p><em>Ads, "Big Tech" buying all available compute, Subscription Based Billing, Phone Addiction, AI Generated posts on Social Media</em></p>
-  </header>
-  <nav>
-    <ul>
-      <li><button hx-get="api/v1/blog/post" hx-swap="innerHTML" hx-target="main">Blog</button></li>
-      <li><a href="/">Portfolio</a></li>
-      <li><a href="/">Photos</a></li>
-      <li><a href="/">CV</a></li>
-    </ul>
-  </nav>
-  <main id="main"></main>
+      <p><em>"Big Tech" buying all available compute, Subscription Based Billing, Phone Addiction, AI Generated posts on Social Media, Ads</em></p><br>
+      <nav>
+        <ul>
+          <li><button hx-get="api/v1/blog/post" hx-swap="innerHTML" hx-target="main">Blog</button></li>
+          <li><button hx-get="api/v1/blog/projects">Portfolio</button></li>
+          <li><button hx-get="api/v1/blog/photos">Photos</button></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main"></main>
   <footer>
     <h4>Socials</h4>
     <ul>
         <li>Twitter</li>
-        <li>LinkedIn</li>
-        <li>GitHub</li>
+        <li><a href="https://www.linkedin.com/in/abdel-allali-dev/">LinkedIn</a></li>
+        <li><a href="https://github.com/Abdel-2020">GitHub</a></li>
     </ul>
   </footer>
   </body>
