@@ -7,20 +7,18 @@
     <link href="css/styles.css" rel="stylesheet">
     <script src="./js/htmx.min.js"></script>
   </head>
-  <body hx-boost="true">
+  <body hx-boost="true">  
     <header>
-      <h1 hx-get="#" hx-target="body">Abdel</h1>
-      <p>An Application Support Analyst with <strong>over 7 years of professional IT Experience</strong> and a <strong>self taught developer</strong> with live projects covering <strong>NodeJS & Python, SQL & NoSQL databases, RESTful API Design & Implementation, MCP Design & Implementation.</strong></p></br>
-      <p>Still here? Want to see my Projects? Well click <strong><a hx-get="api/v1/blog/projects" hx-swap="innerHTML show:top" hx-target="main">here</a></strong> to learn more.</p><br>
-      <h3>Interests:</h3>
-      <p><em>Linux & Open Source, Computer Science, Self Hosting, Local LLMs, Reading, Coffee, Travelling, Hiking, Gym & MMA, Indie Games & Game Dev</em></p></br>
-      <h3>Not the biggest fan of:</h3>
-      <p><em>"Big Tech" buying all available compute, Subscription Based Billing, Phone Addiction, AI Generated posts on Social Media, Ads</em></p><br>
+      <h1 hx-get="/" hx-target="body">Abdel</h1>
+      <p>An <strong>Application Support Analyst and (Self-Taught) Developer with 7+ years of IT experience</strong> delivering live, production-ready software. I specialize in building robust backends with <strong>Node.js and Python, building SQL and NoSQL database layers, and engineering clean RESTful APIs and Model-Context Protocol (MCP) integrations</strong>.</p><br>
+      <p>Still here? Want to see my Projects? Well click <strong><a hx-get="api/v1/pictures" hx-swap="innerHTML show:top" hx-target="body">here</a></strong> to learn more.</p><br>
+      <h3>Interests:</h3> <p><em>Linux & Open Source, Computer Science, Self Hosting, Local LLMs, Reading, Coffee, Travelling, Hiking, Gym & MMA, Indie Games & Game Dev</em>.</p></br> <h3>Not the biggest fan of:</h3>
+      <p><em>"Big Tech" buying all available compute, Subscription Based Billing, Phone Addiction, AI Generated posts on Social Media, Ads</em>.</p><br>
       <nav>
         <ul>
-          <li><button hx-get="api/v1/blog/post" hx-swap="innerHTML" hx-target="main">Blog</button></li>
-          <li><button hx-get="api/v1/blog/projects">Portfolio</button></li>
-          <li><button hx-get="api/v1/blog/photos">Photos</button></li>
+          <li><a hx-get="api/v1/blog/post" hx-swap="innerHTML" hx-target="main">Blog</a></li>
+          <li><a hx-get="api/v1/pictures" hx-target="body">Portfolio</a></li>
+          <li><a hx-get="api/v1/pictures" hx-target="body">Photos</a></li>
         </ul>
       </nav>
     </header>

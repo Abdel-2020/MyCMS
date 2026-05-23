@@ -15,27 +15,43 @@ const { db } = require ('../db/connect.js');
 
 
 const createPost = (title, body, author) => {
-  console.log('Create Post Service')
+
   const statement = db.prepare(`INSERT INTO blog_posts ( title, body, author) VALUES (?, ?, ?)`);
   const result = statement.run(title, body, author);
-  console.log(result);
+
   return result;
+
 };
 
 // Returns an array of JSON objects. Need to convert this to HTML
 // to render direclty in browser with HTMX
+
 const getPosts = () => {
 
   const statement = db.prepare(`SELECT * FROM blog_posts`);
   const data = statement.all();
-  return data
+
+  return data;
+
+};
+
+const getPost = (id) => {
+
+  const statement = db.prepare('SELECT * FROM blog_posts WHERE id = ?');
+  const data = statement.all(id);
+
+  return data;
+
 };
 
 // I'm not 100% sure if this is protected from SQL Injection
 // given that we're directly using the parameters within the updated post object.
 // Needs reviewing
+
 const updatePost = (updatedPost) => {
-// Build the query including only parameters that have been passed.
+
+  // Build the query including only parameters that have been passed.
+
   keys = Object.keys(updatedPost);
   const setClause = keys.map(key => `${key} = '${updatedPost[key]}'`).join(', ');
 
@@ -57,6 +73,7 @@ const deletePost = (id) => {
 module.exports = {
   createPost,
   getPosts,
+  getPost,
   updatePost,
   deletePost,
 };

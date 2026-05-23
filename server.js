@@ -23,6 +23,7 @@ app.use(express.static('./public'));
 
 //Routes
 app.use('/api/v1/blog', postRouter);
+app.use('/api/v1/pictures', picRouter);
 
 app.listen(port, () => {
     db.connect();

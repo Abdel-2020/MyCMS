@@ -12,14 +12,14 @@
     font-family: "IBM Plex Sans", sans-serif; 
 }
 
+
 /*Colours*/
 :root {
 --bg-color: #000000;
 --text-color: #C4D4C8;
 --accent-color: #39FF14;
 --muted-color: #1A3322;
-}
- 
+} 
 
 button{
   background: none;
@@ -59,9 +59,19 @@ body{
         cursor:pointer
     }
 
+    #logo{
+      display:block;
+      width: 110px;
+      height: auto;
+      margin: auto;
+    }
+
+
+
     a {
         color: var(--accent-color);
         text-decoration: none;
+        cursor: pointer;
     }
 
     a:hover {

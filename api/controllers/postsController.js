@@ -16,7 +16,11 @@ const posts = require ('../../services/posts.js');
 // Read Post(s)
 const getPost = async (req,res) => {
   try {
-    console.log('Post(s) retrieved successfully');
+
+    const { id } = req.params
+    data = posts.getPost(id);
+    res.status(200).render('article.njk', {post: data[0]})
+
   } catch (error) {
    res.status(500).json({msg:'Internal Server Error', error});
   };
@@ -26,7 +30,7 @@ const getPosts = async (req,res) => {
   try {
 
    data = posts.getPosts();
-   return res.status(200).render('posts.njk', {posts: data});
+   return res.status(200).render('postList.njk', {posts: data});
 
   } catch (error) {
    res.status(500).json({msg:'Internal Server Error', error});
@@ -63,6 +67,7 @@ const deletePost = async (req, res) => {
 module.exports = {
   createPost,
   getPosts,
+  getPost,
   updatePost,
   deletePost
 };

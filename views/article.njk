@@ -1,25 +1,16 @@
-{% for post in posts %}
-{# Loop through the posts array #}
-
 <article>
   <header>
     <h2 class="headline">{{post.title}}</h2>
     <p class="byline"><address class="author"> By <a rel="author" href="#">{{post.author}}</a></address> on <strong>{{post.date}}</strong></p>
   </header>
   <section class="article-content">
+  <p>{{post.body}}</p>
     <nav>
       <ul>
-        <li><a href="#">See More...</a></li>
-        <li><a href="#">Back to Top...</a></li>
+        <li><a hx-get="/" hx-target="body">Home...</a></li>
+        <li><a hx-get="api/v1/blog/post" hx-target="main">Back...</a></li>
       </ul>
     </nav>
   </section>
 </article>
-{% else %}
-  <p>No posts found</p>
 
-{% endfor %}
-
-<div>
-<button hx-get="#" hx-target="body">Home</button>
-</div>
